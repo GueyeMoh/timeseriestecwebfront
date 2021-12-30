@@ -15,6 +15,7 @@ import BoardAdmin from "./component/AdminComponent";
 
 // import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
+import addSeries from "./component/addSeries";
 
 class App extends Component {
   constructor(props) {
@@ -138,6 +139,7 @@ class App extends Component {
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />
             <Route path="/admin" component={BoardAdmin} />
+            <Route path="/add-series" component={addSeries} />
           </Switch>
         </div>
 

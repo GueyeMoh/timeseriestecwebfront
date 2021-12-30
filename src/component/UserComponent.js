@@ -8,7 +8,7 @@ export default class BoardUser extends Component {
     super(props);
 
     this.state = {
-      content: ""
+      content: []
     };
   }
 
@@ -35,13 +35,48 @@ export default class BoardUser extends Component {
       }
     );
   }
+  addSeries(){
+    this.props.history.push("/add-series"); 
+  }
 
   render() {
     return (
       <div className="container">
         <header className="jumbotron">
-          <h3>{JSON.stringify(this.state.content)}</h3>
+          <h3>This is the list of my series</h3>
         </header>
+        <div>
+        <button className="btn btn-primary" onClick={this.addSeries.bind(this)}>Add Series</button>
+        </div>
+        <div className="row text-center">
+          <div className="table-striped" >
+                <thead>
+                    <tr>
+                        <th>Titre</th> 
+                        <th>Description</th>
+                        
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        this.state.content.map(
+                            (content) =>
+                                <tr key={content.id}>
+                                <td>{content.titre}</td>
+                                <td>{content.description}</td>
+                                <td>
+                                <button className='btn btn-info' >Update</button>
+                                <button className='btn btn-danger' style={{marginLeft:"10px"}}>Delete</button>
+                                <button className='btn btn-success' style={{marginLeft:"10px"}}>Details</button>
+                                </td>
+                          </tr>
+                                                                                        
+                        )
+                    }
+                </tbody>
+            </div>
+        </div>
       </div>
     );
   }
