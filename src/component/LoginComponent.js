@@ -82,13 +82,15 @@ export default class Login extends Component {
   render() {
     return (
       
-      <div className="col-md-4 mx-auto" >
+      <div className="col-12 col-md-6 col-sm-9 col-lg-4 mx-auto" >
         <div className="card card-container border-0">
-          <img
+         <div className="text-center">
+         <img
             src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
             alt="profile-img"
             className="profile-img-card rounded-circle"
           />
+         </div>
 
           <Form
             onSubmit={this.handleLogin}

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, {Component} from "react";
 import authHeader from "../service/AuthHeader";
+import {API_URL} from "../service/Api"; 
 
 
 
@@ -28,7 +29,7 @@ class addSeries extends Component {
     saveSeries = (e) =>{
         e.preventDefault(); 
         let serie = {titre: this.state.titre, description: this.state.description}
-        const API_URL = 'http://localhost:8080/api/test/';
+    
         axios.post(API_URL + "user", serie, { headers: authHeader()}).then(
             res => {
                 this.props.history.push("/user");
