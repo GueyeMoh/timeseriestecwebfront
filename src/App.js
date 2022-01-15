@@ -13,11 +13,17 @@ import BoardUser from "./component/UserComponent";
 import BoardModerator from "./component/ModeratorComponent";
 import BoardAdmin from "./component/AdminComponent";
 
-// import AuthVerify from "./common/auth-verify";
+
 import EventBus from "./common/EventBus";
 import addSeries from "./component/addSeries";
+import showDetails from "./component/showDetails";
+import addDetails from "./component/addDetails";
+
+
+
 
 class App extends Component {
+  
   constructor(props) {
     super(props);
     this.logOut = this.logOut.bind(this);
@@ -140,10 +146,12 @@ class App extends Component {
             <Route path="/mod" component={BoardModerator} />
             <Route path="/admin" component={BoardAdmin} />
             <Route path="/add-series" component={addSeries} />
+            <Route path="/show-details" component={showDetails} />
+            <Route path="/add-details" component={addDetails} />
           </Switch>
         </div>
 
-        { /*<AuthVerify logOut={this.logOut}/> */ }
+      
       </div>
     );
   }

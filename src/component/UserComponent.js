@@ -38,6 +38,9 @@ export default class BoardUser extends Component {
   addSeries(){
     this.props.history.push("/add-series"); 
   }
+  showDetails(){
+    this.props.history.push("/show-details"); 
+  }
 
   render() {
     return (
@@ -68,7 +71,7 @@ export default class BoardUser extends Component {
                                 <td>
                                 <button className='btn btn-info' >Update</button>
                                 <button className='btn btn-danger' style={{marginLeft:"10px"}}>Delete</button>
-                                <button className='btn btn-success' style={{marginLeft:"10px"}}>Details</button>
+                                <button className='btn btn-success' onClick={this.showDetails.bind(this)} style={{marginLeft:"10px"}}>Details</button>
                                 </td>
                           </tr>
                                                                                         
